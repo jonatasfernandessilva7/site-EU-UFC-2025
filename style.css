@@ -1,0 +1,218 @@
+/* Barra superior */
+.nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+.brand .logo{
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg,var(--brand),var(--brand-2));
+    box-shadow: 0 0 0 4px #ffffff0f inset;
+}
+.spacer{ flex:1 }
+
+
+/* Links da barra superior */
+.links {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    position: relative;
+}
+.links a:hover {
+    background: #ffffff10
+}
+.links a.active {
+    color: #0b1020;
+    background: linear-gradient(135deg,var(--brand),var(--brand-2));
+}
+
+
+/* Botões */
+.inscrever{
+    appearance:none;
+    border:0;
+    padding:10px 14px;
+    border-radius:12px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #0b1020;
+    background: linear-gradient(135deg,var(--brand),var(--brand-2));
+    box-shadow: 0 6px 20px #6dd6ff40;
+}
+.inscrever:focus {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+}
+.btn-ghost {
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #ffffff33;
+    color: var(--text);
+    display: inline-block;
+}
+.inscrever-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap
+}
+
+
+/* Botão 3 tracinhos */
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* 3 tracinhos */
+.burger .bar {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: black;
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+
+/* posições das barras */
+.burger .bar:nth-child(1) { top: 12px; }
+.burger .bar:nth-child(2) { top: 19px; }
+.burger .bar:nth-child(3) { top: 26px; }
+
+/* Quando está aberto = X */
+.burger.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.burger.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Parte que abre quando clica nos 3 traços */
+@media (max-width: 860px) {
+  .links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 8px 10px 16px;
+    background: black;
+    border-bottom: 1px solid #ffffff1a;
+    color: white;
+  }
+  .links.open{ 
+    display: flex; 
+    flex-direction: column; 
+  }
+  .burger { 
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center; 
+  }
+}
+
+
+/* Seções */
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+.hero {
+    padding-top: 84px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+.hero h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 10px; }
+.hero p { color: var(--muted); font-size: 18px; margin: 0 0 18px; }
+.card{
+    background: var(--card);
+    border: 1px solid #ffffff1a;
+    padding: 18px;
+    border-radius: 16px;
+}
+@media (max-width:900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+@media (max-width:900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+.tile{
+    background: var(--card);
+    border: 1px solid #ffffff1a;
+    padding: 16px;
+    border-radius: 16px;
+}
+.muted{
+    color: var(--muted)
+}
+.tile-iframe {
+    padding: 0;
+    overflow: hidden;
+}
+.tile-iframe iframe {
+    width: 100%;
+    height: 420px;
+    border: 0;
+    display: block;
+}
+
+
+.logo-EU {
+    filter: invert(1);
+    width: 20vw;   /* 20% da largura da janela */
+    max-width: 200px; /* limite máximo */
+    height: auto;  /* mantém proporção */
+}
+
+
+.logo-UFC {
+    width: 20vw;   /* 20% da largura da janela */
+    max-width: 200px; /* limite máximo */
+    height: auto;  /* mantém proporção */
+}
