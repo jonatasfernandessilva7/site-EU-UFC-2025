@@ -99,6 +99,7 @@ document.querySelectorAll('section').forEach(el => {
   }, { threshold: 0.15 }).observe(el);
 });
 
+//button for home page
 const backToTop = document.createElement('button');
 backToTop.textContent = '↑';
 Object.assign(backToTop.style, {
@@ -139,3 +140,71 @@ backToTop.addEventListener('click', () => {
     });
   }
 })();
+
+//dates animations
+window.addEventListener('DOMContentLoaded', () => {
+  const card = document.querySelector('.card');
+  if (card) {
+    card.style.transition = 'box-shadow 0.7s, transform 0.7s';
+    card.style.boxShadow = '0 0 0 #D85841';
+    card.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      card.style.boxShadow = '0 8px 32px #D85841aa';
+      card.style.transform = 'scale(1.03)';
+    }, 200);
+    setTimeout(() => {
+      card.style.boxShadow = '';
+      card.style.transform = '';
+    }, 1200);
+  }
+});
+
+/////////////////////////////////////PARA USAR DEPOIS////////////////////////////////////////
+
+//modal for subscribe button
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('[data-inscrever]');
+  if (!btn) return;
+
+  //create modal
+  const modalBg = document.createElement('div');
+  Object.assign(modalBg.style, {
+    position: 'fixed',
+    top: 0, left: 0, right: 0, bottom: 0,
+    background: 'rgba(0,0,0,0.5)',
+    zIndex: 3000,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  });
+
+  const modal = document.createElement('div');
+  Object.assign(modal.style, {
+    background: '#fff',
+    color: '#222',
+    padding: '32px 24px',
+    borderRadius: '16px',
+    boxShadow: '0 4px 24px #0003',
+    textAlign: 'center',
+    maxWidth: '90vw',
+    fontSize: '1.1rem'
+  });
+  modal.innerHTML = `
+    <p>Você será redirecionado para o formulário de inscrição.</p>
+    <button id="modalConfirm" style="margin:16px 8px 0 0;padding:8px 18px;border-radius:8px;background:#1C4931;color:#fff;border:0;cursor:pointer;">Continuar</button>
+    <button id="modalCancel" style="margin:16px 0 0 8px;padding:8px 18px;border-radius:8px;background:#D85841;color:#fff;border:0;cursor:pointer;">Cancelar</button>
+  `;
+  modalBg.appendChild(modal);
+  document.body.appendChild(modalBg);
+
+  //continue button
+  modal.querySelector('#modalConfirm').onclick = function() {
+    modalBg.remove();
+    //redirect to form
+    window.location.href = 'sub/inscrever.html';
+  };
+  //cancel button
+  modal.querySelector('#modalCancel').onclick = function() {
+    modalBg.remove();
+  };
+});
