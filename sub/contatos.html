@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../imgs/icone_EU.png" />
+
+    <title>Contatos | Encontro Universitário</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <script src="../script.js" defer></script>
+
+</head>
+
+<body>
+    
+    <!-- Barra superior -->
+    <header class="topbar" id="topbar">
+        <nav class="nav" aria-label="Navegação principal">
+            <a class="brand" href="../index.html" aria-label="Ir para Início">
+                <img src="../imgs/encontros25_logo.png" alt="Logo-img" class="logo-EU">
+            </a>
+            <a href="https://itapaje.ufc.br/pt/">
+                <img src="../imgs/brasao_UFC.png" alt="brasao-ufc" class="logo-UFC">
+            </a>
+            <div class="spacer"></div>
+            <div class="links" id="navLinks">
+                <a href="../index.html" >Home</a>
+                <a href="resumos.html">Resumos</a>
+            </div>
+            <button class="inscrever" onclick="window.location.href='../sub/inscrever.html'">Inscreva-se</button>
+            
+            <!-- três traços -->
+            <button class="burger" id="burger" aria-label="Abrir menu" aria-controls="navLinks" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <main>
+        <section id="home" class="hero">
+            <div>
+                <h1>CONTATOS</h1>
+                <div class="sobre">
+                    <h2>SOBRE</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto sapiente velit alias odit vel maiores autem cupiditate aspernatur animi error, saepe esse iure et, voluptatibus quasi iste, molestiae dolores! Aut. Lorem ipsum dolor sit, amet consectetur adipisicing elit. A enim quaerat sunt, aut officia eveniet asperiores temporibus cum ex ullam quas minus aliquid provident alias saepe nam sequi animi incidunt?</p>
+                </div>
+                <div class="objetivo">
+                    <h2>OBJETIVO</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cum rerum libero consequuntur iste neque voluptatum tempore quaerat eos deleniti? Sapiente tempore eaque dolorum cumque dolore veritatis excepturi consequatur minima!</p>
+                </div>
+                <div class="missao">
+                    <h2>MISSÃO</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae veniam dolores, voluptatem itaque veritatis iste hic aspernatur aliquid quaerat saepe blanditiis eum maxime voluptatum minima dolorum consequatur, eius quisquam corrupti!</p>
+                </div>
+                <div class="visao">
+                    <h2>VISÃO</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur tempore porro illo labore ipsum, nesciunt, magnam quibusdam voluptatum quas modi magni itaque quasi ea deserunt iusto unde quaerat inventore nam.</p>
+                </div>
+                <div class="valores">
+                    <h2>VALORES</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, at, perferendis, mollitia provident voluptatem iure beatae aperiam tempora facere dolores maiores amet fugit sint incidunt unde odit illo recusandae repellendus.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Datas importantes</h3>
+                    <ul class="muted">
+                        <li>Submissão de resumos: <strong>01–30 set</strong></li>
+                        <li>Resultado da avaliação: <strong>15 out</strong></li>
+                        <li>Inscrições: <strong>01 set – 31 out</strong></li>
+                        <li>Evento: <strong>12–14 nov</strong></li>
+                    </ul>
+            </div>
+        </section>
+
+    <!-- Resumos -->
+    <section id="resumos">
+        <h2>Chamada de Resumos</h2>
+        <p class="muted">Diretrizes rápidas para submissão. Você pode personalizar este bloco com PDFs, modelos e links do seu SIGAA/Sistema interno.</p>
+        <div class="grid">
+            <article class="tile">
+                <h3>Áreas Temáticas</h3>
+                    <p class="muted">Ciências da Saúde, Exatas, Humanas, Engenharias, Linguística, Artes & Design, Tecnologia da Informação, Extensão universitária.</p>
+            </article>
+            <article class="tile">
+                <h3>Formato do Resumo</h3>
+                    <p class="muted">Até 300 palavras, 3–5 palavras‑chave, referências opcionais. Template em DOCX/LaTeX. Título em caixa alta, autores com afiliação.</p>
+            </article>
+            <article class="tile">
+                <h3>Avaliação</h3>
+                    <p class="muted">Dupla revisão cega, critérios: originalidade, método, clareza, relevância. Resultados divulgados por e‑mail e página do evento.</p>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- Inscrição -->
+    <section id="inscricao">
+        <h2>Inscrição</h2>
+        <p class="muted">Integre seu formulário (Google Forms, Wufoo, Typeform ou backend próprio) no iframe abaixo ou redirecione via botão.</p>
+        <div class="tile tile-iframe">
+            <iframe title="Formulário de Inscrição" srcdoc="\
+                <style>body{font-family:sans-serif; padding:20px} .box{border:1px solid #ddd; border-radius:12px; padding:16px} button{padding:10px 14px; border-radius:10px; border:0; background:#0a84ff; color:#fff; font-weight:700}</style>\
+                <div class='box'>Substitua este iframe por seu <b>Google Forms</b> ou insira um link externo.\
+                <p>Exemplo: <a href='https://forms.gle/' target='_blank'>Abrir formulário</a></p>\
+                <button onclick=\"window.top.location.hash='contatos'\">Dúvidas? Fale conosco</button></div>"></iframe>
+        </div>
+    </section>
+
+
+    <!-- Contatos -->
+    <section id="contatos">
+        <h2>Contatos</h2>
+        <div class="grid">
+            <div class="tile">
+                <h3>Comissão Organizadora</h3>
+                <p class="muted">E‑mail: encontro@universidade.br<br>WhatsApp: (88) 9 0000‑0000<br>Instagram: @euniv_quixada</p>
+            </div>
+            <div class="tile">
+                <h3>Local</h3>
+                <p class="muted">Campus Quixadá – Bloco A, Auditório Principal. Endereço completo, mapas e informações de acesso.</p>
+            </div>
+            <div class="tile">
+                <h3>Parcerias</h3>
+                <p class="muted">Pró‑Reitoria de Pesquisa e Pós‑Graduação, Diretório Central Estudantil, Empresas Júnior e laboratórios.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
