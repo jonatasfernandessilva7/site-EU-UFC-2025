@@ -149,6 +149,8 @@ body {
 section {
     margin-right: 5vw;
     margin-left: 5vw;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 80px clamp(12px, 3.5vw, 28px);
 }
 
@@ -241,5 +243,3 @@ section {
         width: 100%;
     }
 }
-
-
