@@ -159,8 +159,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/////////////////////////////////////PARA USAR DEPOIS////////////////////////////////////////
-
 //modal for subscribe button
 document.addEventListener('click', function(e) {
   const btn = e.target.closest('[data-inscrever]');
