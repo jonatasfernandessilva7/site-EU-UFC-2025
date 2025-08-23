@@ -143,7 +143,7 @@ backToTop.addEventListener('click', () => {
 
 //dates animations
 window.addEventListener('DOMContentLoaded', () => {
-  const card = document.querySelector('.card');
+  const card = document.querySelector('#card-date');
   if (card) {
     card.style.transition = 'box-shadow 0.7s, transform 0.7s';
     card.style.boxShadow = '0 0 0 #D85841';
