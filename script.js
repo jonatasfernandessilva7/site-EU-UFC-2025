@@ -102,12 +102,21 @@ document.querySelectorAll('section').forEach(el => {
 //button for home page
 const backToTop = document.createElement('button');
 backToTop.textContent = '↑';
+backToTop.title = 'Voltar ao topo';
 Object.assign(backToTop.style, {
   display: 'none',
   position: 'fixed',
-  bottom: '30px',
-  right: '30px',
-  padding: '12px 16px',
+  bottom: '25px',
+  right: '25px',
+  
+  //adicinei essas coisinhas aq: ass. Adegas kkk
+  width: '40px',
+  height: '40px',
+  padding: '0',
+  justifyContent: 'center',
+  alignItems: 'center',
+
+  //padding: '12px 16px',
   borderRadius: '50%',
   background: '#D85841',
   color: '#fff',

@@ -134,7 +134,7 @@ body {
         flex-direction: column;
     }
     .links.open a {
-        color: white;
+        color: #fff;
     }
     .links.open a:hover {
         color: #af761f;
@@ -223,13 +223,13 @@ section {
 .logo-EU {
     filter: invert(1);
     width: 20vw;
-    max-width: 200px;
+    max-width: 170px;
     height: auto;
 }
 
 .logo-UFC {
     width: 20vw;
-    max-width: 200px;
+    max-width: 170px;
     height: auto;
 }
 
@@ -244,4 +244,57 @@ section {
     .main-card, .side-card {
         width: 100%;
     }
+}
+
+
+.rodape {
+    text-align: center;
+    padding: 12px 0;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+}
+
+/* sections (as depois do home) */
+#contatos {
+    margin-top: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding: 24px clamp(16px, 4vw, 32px);
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;   para centralizar os itens*/
+    background-color: #f9e7d7;
+
+    box-shadow: inset 0 2px 8px rgba(0,0,0,.20);
+}
+
+#info {
+    margin-top: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding: 24px clamp(16px, 4vw, 32px);
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;   para centralizar os itens*/
+    background-color: #f9e7d7;
+
+    box-shadow: inset 0 2px 8px rgba(0,0,0,.20);
+}
+#info button {
+    width: 120px;
+    height: 50px;
+}
+
+#org {
+    margin-top: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding: 24px clamp(16px, 4vw, 32px);
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;   para centralizar os itens*/
+    background-color: #f9e7d7;
+
+    box-shadow: inset 0 2px 8px rgba(0,0,0,.20);
 }
