@@ -168,8 +168,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/////////////////////////////////////PARA USAR DEPOIS////////////////////////////////////////
-
 //modal for subscribe button
 document.addEventListener('click', function(e) {
   const btn = e.target.closest('[data-inscrever]');
@@ -210,7 +208,7 @@ document.addEventListener('click', function(e) {
   modal.querySelector('#modalConfirm').onclick = function() {
     modalBg.remove();
     //redirect to form
-    window.location.href = 'sub/inscrever.html';
+    window.open('https://forms.gle/ULJDgDThfGPnFRtp8', '_blank');
   };
   //cancel button
   modal.querySelector('#modalCancel').onclick = function() {
