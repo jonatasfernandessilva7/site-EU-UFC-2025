@@ -25,12 +25,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Util: rolagem suave via data-scrollto
 addEventListener('click', (e) => {
-const t = e.target.closest('[data-scrollto]');
-if (!t) return;
-e.preventDefault();
-const sel = t.getAttribute('data-scrollto');
-const el = document.querySelector(sel);
-el?.scrollIntoView({behavior:'smooth'});
+  const t = e.target.closest('[data-scrollto]');
+  if (!t) return;
+  e.preventDefault();
+  const sel = t.getAttribute('data-scrollto');
+  const el = document.querySelector(sel);
+  //visual event in animated click
+  t.style.transition = 'background 0.4s, color 0.4s, box-shadow 0.4s, transform 0.3s, opacity 0.3s';
+  t.style.background = '#f5e663';
+  t.style.color = '#333';
+  t.style.boxShadow = '0 4px 16px #D8584188';
+  t.style.transform = 'scale(1.08)';
+  t.style.opacity = '0.8';
+  //return in normal mode
+  setTimeout(() => {
+    t.style.background = '';
+    t.style.color = '';
+    t.style.boxShadow = '';
+    t.style.transform = '';
+    t.style.opacity = '';
+  }, 400);
+  // Rolagem suave
+  el?.scrollIntoView({behavior:'smooth'});
 });
 
 
@@ -155,10 +171,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const card = document.querySelector('#card-date');
   if (card) {
     card.style.transition = 'box-shadow 0.7s, transform 0.7s';
-    card.style.boxShadow = '0 0 0 #D85841';
+    card.style.boxShadow = '0 0 0 #1C4931ff';
     card.style.transform = 'scale(0.95)';
     setTimeout(() => {
-      card.style.boxShadow = '0 8px 32px #D85841aa';
+      card.style.boxShadow = '0 8px 32px #1C4931ff';
       card.style.transform = 'scale(1.03)';
     }, 200);
     setTimeout(() => {
@@ -197,9 +213,9 @@ document.addEventListener('click', function(e) {
     fontSize: '1.1rem'
   });
   modal.innerHTML = `
-    <p>Você será redirecionado para o formulário de inscrição.</p>
-    <button id="modalConfirm" style="margin:16px 8px 0 0;padding:8px 18px;border-radius:8px;background:#1C4931;color:#fff;border:0;cursor:pointer;">Continuar</button>
-    <button id="modalCancel" style="margin:16px 0 0 8px;padding:8px 18px;border-radius:8px;background:#D85841;color:#fff;border:0;cursor:pointer;">Cancelar</button>
+    <p>Você gostaria de ser redirecionado para o formulário de inscrição?</p>
+    <button id="modalConfirm" style="margin:16px 8px 0 0;padding:8px 18px;border-radius:8px;background:#1C4931;color:#fff;border:0;cursor:pointer;">Sim</button>
+    <button id="modalCancel" style="margin:16px 0 0 8px;padding:8px 18px;border-radius:8px;background:#D85841;color:#fff;border:0;cursor:pointer;">Não</button>
   `;
   modalBg.appendChild(modal);
   document.body.appendChild(modalBg);
