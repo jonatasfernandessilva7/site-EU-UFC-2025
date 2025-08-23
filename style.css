@@ -148,7 +148,7 @@ body {
 
 section {
     max-width: 1100px;
-    margin: 0;
+    margin: 0 auto;
     padding: 80px clamp(12px, 3.5vw, 28px);
 }
 
@@ -239,4 +239,5 @@ section {
     .main-card, .side-card {
         width: 100%;
     }
+
 }
