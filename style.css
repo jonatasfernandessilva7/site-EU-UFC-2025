@@ -26,8 +26,8 @@ body {
     letter-spacing: 0.2px;
 }
 .brand .logo {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     border-radius: 8px;
     background: linear-gradient(135deg, #a1d49a, #50e3c2);
     box-shadow: 0 0 0 4px #ffffff0f inset;
@@ -117,11 +117,14 @@ body {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 420px) {
+    .nav {
+        padding: 15px;
+    }
     .links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 30vw;
         left: 0;
         right: 0;
         padding: 8px 10px 16px;
@@ -140,9 +143,14 @@ body {
         color: #af761f;
     }
     .burger { 
-        display: inline-flex;
+        display: flex;
         align-items: center; 
         justify-content: center;
+        margin: none;
+        padding: none;
+    }
+    .inscrever {
+        width: 10vw;
     }
 }
 
