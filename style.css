@@ -15,14 +15,6 @@ body {
     gap: 16px;
 }
 
-#topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
 
 .brand {
     display: flex;
@@ -164,7 +156,6 @@ section {
 section#home{
     max-width: 1100px;
     margin: 40px auto;
-    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -213,13 +204,13 @@ section#home{
 
 .main-card {
     width: 70%;
-    background-color: #1C4931ff;
+    background-color: #D85841;
     color: #ece9e9;
 }
 
 .side-card {
     width: 30%;
-    background-color: #D85841;
+    background-color: #1C4931ff;
     color: #eee8e8;
     text-align: left;
 }
