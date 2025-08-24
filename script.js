@@ -163,6 +163,25 @@ backToTop.addEventListener('click', () => {
       btn.style.background = '#333';
       btn.style.color = '#fff';
     });
+    //if dark mode add color filter
+    document.querySelectorAll('.logo-EU, .logo-UFC').forEach(img => {
+      img.style.filter = 'brightness(0) invert(1)';
+    });
+    //adapter sections for dark mode
+    document.querySelectorAll('h1, section, .card, .main-container').forEach(sec => {
+      sec.style.background = '#222';
+      sec.style.color = '#eee';
+    });
+  } else {
+    //if not dark remove color filter
+    document.querySelectorAll('.logo-EU, .logo-UFC').forEach(img => {
+      img.style.filter = '';
+    });
+    //return normal mode
+    document.querySelectorAll('section, .card, .main-container').forEach(sec => {
+      sec.style.background = '';
+      sec.style.color = '';
+    });
   }
 })();
 
