@@ -274,9 +274,12 @@ section#home{
 
 /* sections (as depois do home) */
 #contatos {
-    margin-top: 5vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    width: 100%;
+    /* max-width: none; */
+    /* width: 45%; */
+    margin-top: 2vw;
+    /* margin-left: 18.5vw;
+    margin-right: 5vw; */ 
     padding: 24px clamp(16px, 4vw, 32px);
     display: flex;
     flex-direction: column;
@@ -287,9 +290,12 @@ section#home{
 }
 
 #info {
-    margin-top: 5vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    width: 100%;
+    /* max-width: none; */
+    /* width: 45%; */
+    margin-top: 2vw;
+    /* margin-left: 5vw;
+    margin-right: 5vw; */
     padding: 24px clamp(16px, 4vw, 32px);
     display: flex;
     flex-direction: column;
@@ -304,9 +310,13 @@ section#home{
 }
 
 #org {
-    margin-top: 5vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    width: 100%;
+    /* max-width: none;
+    width: 45%; */
+    margin-top: 2vw;
+    /* margin-left: 5vw; */
+    /* margin-right: 5vw; */
+    margin-bottom: 2vw;
     padding: 24px clamp(16px, 4vw, 32px);
     display: flex;
     flex-direction: column;
