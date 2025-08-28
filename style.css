@@ -89,6 +89,27 @@ h1, h2, h3, p {
 }
 
 
+.inscrever_2 {
+    white-space: nowrap;
+    appearance: none;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(135deg, #af761f, #f89719);
+    transition: box-shadow .2s ease;
+}
+.inscrever_2:focus {
+    outline: 3px solid #0a0e0b;
+    outline-offset: 2px;
+}
+.inscrever_2:hover {
+    box-shadow: 0 6px 16px rgba(209, 209, 209, 0.25);
+}
+
+
 .burger {
     display: none;
     background: none;
@@ -349,6 +370,9 @@ body.dark .logo-UFC {
 body.dark .inscrever {
     border: 1px solid white;
 }
+body.dark .inscrever_2 {
+    border: 1px solid white;
+}
 
 
 
@@ -530,6 +554,14 @@ body.dark .inscrever {
     }
     .inscrever {
         display: none;
+    }
+
+    #info .inscrever_2 {
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        width: 90px;
+        font-size: 10px;
     }
 
     main {

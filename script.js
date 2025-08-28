@@ -244,3 +244,52 @@ document.addEventListener('click', function(e) {
     modalBg.remove();
   };
 });
+
+
+
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('[data-inscrever2]');
+  if (!btn) return;
+
+  //create modal
+  const modalBg = document.createElement('div');
+  Object.assign(modalBg.style, {
+    position: 'fixed',
+    top: 0, left: 0, right: 0, bottom: 0,
+    background: 'rgba(0,0,0,0.5)',
+    zIndex: 3000,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  });
+
+  const modal = document.createElement('div');
+  Object.assign(modal.style, {
+    background: '#fff',
+    color: '#222',
+    padding: '32px 24px',
+    borderRadius: '16px',
+    boxShadow: '0 4px 24px #0003',
+    textAlign: 'center',
+    maxWidth: '90vw',
+    fontSize: '1.1rem'
+  });
+  modal.innerHTML = `
+    <p>Você gostaria de ser redirecionado para o formulário de inscrição?</p>
+    <button id="modalConfirm" style="margin:16px 8px 0 0;padding:8px 18px;border-radius:8px;background:#1C4931;color:#fff;border    :0;cursor:pointer;">Sim</button>
+    <button id="modalCancel" style="margin:16px 0 0 8px;padding:8px 18px;border-radius:8px;background:#D85841;color:#fff;border:0;cursor:pointer;">Não</button>
+  `;
+  modalBg.appendChild(modal);
+  document.body.appendChild(modalBg);
+
+  //continue button
+  modal.querySelector('#modalConfirm').onclick = function() {
+    modalBg.remove();
+    //redirect to form
+    window.open('https://forms.gle/ULJDgDThfGPnFRtp8', '_blank');
+  };
+  //cancel button
+  modal.querySelector('#modalCancel').onclick = function() {
+    modalBg.remove();
+  };
+});
