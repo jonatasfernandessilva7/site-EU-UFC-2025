@@ -9,13 +9,15 @@ window.addEventListener('DOMContentLoaded', () => {
     transform: 'translateX(-50%)',
     background: '#1C4931',
     color: '#fff',
-    padding: '12px 32px',
+    padding: '2vw 4vw',
     borderRadius: '24px',
-    fontSize: '1.2rem',
+    fontSize: 'clamp(10px, 2vw, 17px)',
+    maxWidth: '90',
     boxShadow: '0 2px 12px #0002',
     zIndex: '2000',
     opacity: '0',
-    transition: 'opacity 0.7s'
+    transition: 'opacity 0.7s',
+    textAlign: 'center'
   });
   document.body.appendChild(msg);
   setTimeout(() => { msg.style.opacity = '1'; }, 200);
@@ -49,7 +51,6 @@ addEventListener('click', (e) => {
   el?.scrollIntoView({behavior:'smooth'});
 });
 
-
 // ===== Menu hambúrguer =====
 const burger = document.getElementById('burger');
 const links = document.getElementById('navLinks');
@@ -71,21 +72,19 @@ if (burger && links) {
   });
 }
 
-
 // Hide-on-scroll topbar
 let lastY = window.scrollY;
 const topbar = document.getElementById('topbar');
 const threshold = 12; // px para ignorar micro rolagens
 addEventListener('scroll', () => {
-const y = window.scrollY;
-if (y > 6) topbar.classList.add('scrolled'); else topbar.classList.remove('scrolled');
-if (Math.abs(y - lastY) > threshold){
-if (y > lastY && y > 80){ topbar.classList.add('hide'); }
-else { topbar.classList.remove('hide'); }
-lastY = y;
-}
+  const y = window.scrollY;
+  if (y > 6) topbar.classList.add('scrolled'); else topbar.classList.remove('scrolled');
+  if (Math.abs(y - lastY) > threshold){
+    if (y > lastY && y > 80){ topbar.classList.add('hide'); }
+    else { topbar.classList.remove('hide'); }
+    lastY = y;
+  }
 }, {passive:true});
-
 
 // Active link highlight por seção
 const navAnchors = links ? Array.from(links.querySelectorAll('a')).filter(a => a.getAttribute('href').startsWith('#')) : [];
@@ -101,7 +100,7 @@ const io = new IntersectionObserver((entries) => {
 
 targets.forEach(sec => io.observe(sec));
 
-//fade-in for all sections
+// fade-in for all sections
 document.querySelectorAll('section').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
@@ -115,7 +114,7 @@ document.querySelectorAll('section').forEach(el => {
   }, { threshold: 0.15 }).observe(el);
 });
 
-//button for home page
+// button for home page
 const backToTop = document.createElement('button');
 backToTop.textContent = '↑';
 backToTop.title = 'Voltar ao topo';
@@ -124,15 +123,11 @@ Object.assign(backToTop.style, {
   position: 'fixed',
   bottom: '25px',
   right: '25px',
-  
-  //adicinei essas coisinhas aq: ass. Adegas kkk
   width: '40px',
   height: '40px',
   padding: '0',
   justifyContent: 'center',
   alignItems: 'center',
-
-  //padding: '12px 16px',
   borderRadius: '50%',
   background: '#D85841',
   color: '#fff',
@@ -151,41 +146,40 @@ backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-//dark mode
-(function(){
-  const hora = new Date().getHours();
-  if (hora >= 19 || hora < 7) {
-    document.body.style.background = '#181a1b';
-    document.body.style.color = '#eee';
-    const topbar = document.getElementById('topbar');
-    if (topbar) topbar.style.background = '#222';
-    document.querySelectorAll('button').forEach(btn => {
-      btn.style.background = '#333';
-      btn.style.color = '#fff';
-    });
-    //if dark mode add color filter
-    document.querySelectorAll('.logo-EU, .logo-UFC').forEach(img => {
-      img.style.filter = 'brightness(0) invert(1)';
-    });
-    //adapter sections for dark mode
-    document.querySelectorAll('h1, section, .card, .main-container').forEach(sec => {
-      sec.style.background = '#222';
-      sec.style.color = '#eee';
-    });
-  } else {
-    //if not dark remove color filter
-    document.querySelectorAll('.logo-EU, .logo-UFC').forEach(img => {
-      img.style.filter = '';
-    });
-    //return normal mode
-    document.querySelectorAll('section, .card, .main-container').forEach(sec => {
-      sec.style.background = '';
-      sec.style.color = '';
-    });
-  }
-})();
+/* MODO NOTURNO VIA BOTÃO */
+const toggleBtn = document.getElementById('darkToggle');
+const toggleIcon = toggleBtn ? toggleBtn.querySelector('.icon-dark') : null;
 
-//dates animations
+function aplicarTema(escuro) {
+  if (escuro) {
+    document.body.classList.add('dark');
+    if (toggleIcon) {
+      toggleIcon.src = 'imgs/sol.png';
+      toggleIcon.alt = 'Tema claro';
+    }
+    localStorage.setItem('darkmode', 'on');
+  } else {
+    document.body.classList.remove('dark');
+    if (toggleIcon) {
+      toggleIcon.src = 'imgs/lua.png';   // mostra lua quando está NO claro (para ir ao escuro)
+      toggleIcon.alt = 'Tema escuro';
+    }
+    localStorage.setItem('darkmode', 'off');
+  }
+}
+
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    const escuro = !document.body.classList.contains('dark');
+    aplicarTema(escuro);
+  });
+
+  // Inicializa com a preferência salva (padrão: claro)
+  const saved = localStorage.getItem('darkmode');
+  aplicarTema(saved === 'on');
+}
+
+// dates animations
 window.addEventListener('DOMContentLoaded', () => {
   const card = document.querySelector('#card-date');
   if (card) {
@@ -203,7 +197,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-//modal for subscribe button
+// modal for subscribe button
 document.addEventListener('click', function(e) {
   const btn = e.target.closest('[data-inscrever]');
   if (!btn) return;
@@ -233,7 +227,7 @@ document.addEventListener('click', function(e) {
   });
   modal.innerHTML = `
     <p>Você gostaria de ser redirecionado para o formulário de inscrição?</p>
-    <button id="modalConfirm" style="margin:16px 8px 0 0;padding:8px 18px;border-radius:8px;background:#1C4931;color:#fff;border:0;cursor:pointer;">Sim</button>
+    <button id="modalConfirm" style="margin:16px 8px 0 0;padding:8px 18px;border-radius:8px;background:#1C4931;color:#fff;border    :0;cursor:pointer;">Sim</button>
     <button id="modalCancel" style="margin:16px 0 0 8px;padding:8px 18px;border-radius:8px;background:#D85841;color:#fff;border:0;cursor:pointer;">Não</button>
   `;
   modalBg.appendChild(modal);

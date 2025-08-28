@@ -67,7 +67,6 @@ h1, h2, h3, p {
 }
 
 
-
 .inscrever {
     white-space: nowrap;
     appearance: none;
@@ -299,21 +298,73 @@ section#home{
     box-shadow: inset 0 2px 8px rgba(0,0,0,.20);
 }
 
+/* BOTÃO DARK MODE */
+/* Botão do modo escuro */
+.toggle-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+.toggle-dark .icon-dark {
+  width: 22px;
+  height: 22px;
+}
+
+/* Tema escuro por classe no body */
+body.dark {
+  background: #181a1b;
+  color: #eee;
+}
+body.dark a {
+    color: white;
+}
+body.dark a:hover {
+    color: black;
+}
+body.dark section,
+body.dark .card {
+  background: #222 !important;
+  color: #eee;
+}
+body.dark button {
+  background: none;
+  color: #fff;
+}
+body.dark button img {
+    filter: brightness(0) invert(1);
+}
+body.dark button .bar {
+    filter: brightness(0) invert(1);
+}
+body.dark .logo-EU,
+body.dark .logo-UFC {
+  filter: brightness(0) invert(1);
+}
+body.dark .inscrever {
+    border: 1px solid white;
+}
+
 
 
 /* VERSÃO PARA MOBILE */
 
 /*TAMANHO M*/
-@media (max-width: 870px) {
+@media (max-width: 900px) {
     .topbar {
         display: flex;
         width: 100%;
         height: 10vw;
-        min-height: 40px;
+        min-height: 30px;
         padding: 0;
-        padding-top: 2vw;
     }
     .nav {
+        position: relative;
         width: 100%;
         height: 100%;
         padding: 0;
@@ -323,7 +374,7 @@ section#home{
     .links {
         display: none;
         position: absolute;
-        top: 10%;
+        top: 100%;
         left: 0;
         right: 0;
         padding: 8px 10px 16px;
@@ -332,7 +383,6 @@ section#home{
         color: #ad9d9d;
     }
     .links.open {
-        top: 12vw;
         display: flex; 
         flex-direction: column;
     }
@@ -340,7 +390,7 @@ section#home{
         color: #fff;
     }
     .links.open a:hover {
-        color: #af761f;
+        color: black;
     }
     .burger { 
         display: flex;
@@ -434,6 +484,156 @@ section#home{
 }
 
 /*TAMANHO P*/
-@media (max-width: 400px) {
+@media (max-width: 470px) {
+    .topbar {
+        display: flex;
+        width: 100%;
+        height: 10vw;
+        min-height: 30px;
+        padding: 0;
+    }
+    .nav {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+    .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 8px 10px 16px;
+        background: #333;
+        border-bottom: 1px solid #ffffff1a;
+        color: #ad9d9d;
+    }
+    .links.open {
+        display: flex; 
+        flex-direction: column;
+    }
+    .links.open a {
+        color: #fff;
+        font-size: 12px;
+    }
+    .links.open a:hover {
+        color: black;
+    }
+    .burger { 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .inscrever {
+        display: none;
+    }
 
+    main {
+        padding-top: 0;
+        width: 90vw;
+        margin: 0;
+    }
+    section {
+        padding-left: 2vw;
+        padding-right: 2vw;
+        margin: 0;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .main-card {
+        margin-top: 2vw;
+    }
+    .side-card {
+        margin-bottom: 2vw;
+    }
+    .main-card, .side-card {
+        width: 100%;
+        max-width: 1200px;
+        padding-right: 15px;
+        padding-left: 15px;
+        box-sizing: border-box; /* garante que o padding não estoure a largura */
+        font-size: 13px;
+    }
+
+    .map {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+    }
+    .map iframe {
+        width: 100%;
+    }
+
+    #info button {
+        display: none;
+    }
+
+    h1, h2, h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+    p {
+        margin-top: 0;
+        font-size: 10px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+    ul, li {
+        margin-top: 0;
+        font-size: 10px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .toggle-dark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+    }
+    .toggle-dark .icon-dark {
+        width: 18px;
+        height: 18px;
+    }
+
+    .burger {
+        top: -12%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        border-radius: 8px;
+        cursor: pointer;
+        padding: 0;
+    }
+    .burger .bar {
+        left: 6px;
+        right: 6px;
+    }
 }
