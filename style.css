@@ -377,6 +377,58 @@ body.dark .inscrever_2 {
 
 
 /* VERSÃO PARA MOBILE */
+@media (max-width: 1020px) {
+    .topbar {
+        display: flex;
+        width: 100%;
+        height: 10vw;
+        min-height: 30px;
+        padding: 0;
+    }
+    .nav {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+    .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 8px 10px 16px;
+        background: #333;
+        border-bottom: 1px solid #ffffff1a;
+        color: #ad9d9d;
+    }
+    .links.open {
+        display: flex; 
+        flex-direction: column;
+    }
+    .links.open a {
+        color: #fff;
+    }
+    .links.open a:hover {
+        color: black;
+    }
+    .burger { 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .inscrever {
+        display: flex;
+        justify-content: center;
+        width: 80px;
+        font-size: 10px;
+    }
+}
+
 
 /*TAMANHO M*/
 @media (max-width: 900px) {
