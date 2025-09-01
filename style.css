@@ -67,7 +67,7 @@ h1, h2, h3, p {
 }
 
 
-.inscrever {
+.inscrever, .ver_edital {
     white-space: nowrap;
     appearance: none;
     border: 0;
@@ -80,11 +80,11 @@ h1, h2, h3, p {
     box-shadow: 0 6px 20px rgba(137, 211, 131, 0.25);
     transition: box-shadow .2s ease;
 }
-.inscrever:focus {
+.inscrever:focus, .ver_edital:focus {
     outline: 3px solid #0a0e0b;
     outline-offset: 2px;
 }
-.inscrever:hover {
+.inscrever:hover, .ver_edital:hover {
     box-shadow: 0 6px 16px rgba(0,0,0,.25);
 }
 
@@ -202,13 +202,13 @@ section#home{
 
 .main-card {
     width: 70%;
-    background-color: #D85841;
+    background-color: #1C4931ff;
     color: #ece9e9;
 }
 
 .side-card {
     width: 30%;
-    background-color: #1C4931ff;
+    background-color: #D85841;
     color: #eee8e8;
     text-align: left;
 }
@@ -294,6 +294,7 @@ section#home{
     width: 120px;
     height: 50px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 .map {
     display: flex;
@@ -306,6 +307,20 @@ section#home{
 
 
 #org {
+    max-width: 1200px;
+    margin-top: 2vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9e7d7;
+
+    box-shadow: inset 0 2px 8px rgba(0,0,0,.20);
+}
+
+#programacao {
     max-width: 1200px;
     margin-top: 2vw;
     margin-left: 4vw;
@@ -374,7 +389,12 @@ body.dark .inscrever_2 {
     border: 1px solid white;
 }
 
-
+body.dark .ver_edital, .baixar_tamplate {
+    border: 1px solid white;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
 
 /* VERSÃO PARA MOBILE */
 @media (max-width: 1020px) {
@@ -537,6 +557,7 @@ body.dark .inscrever_2 {
         align-items: center;
         width: 25vw;
         margin-bottom: 10px;
+        cursor: pointer;
     }
 
     h1, h2, h3 {
@@ -609,6 +630,14 @@ body.dark .inscrever_2 {
     }
 
     #info .inscrever_2 {
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        width: 90px;
+        font-size: 10px;
+    }
+
+    #info .ver_edital {
         display: flex;
         justify-content: center;
         height: 40px;
