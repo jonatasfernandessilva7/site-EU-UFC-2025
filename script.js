@@ -116,15 +116,15 @@ document.querySelectorAll('section').forEach(el => {
 
 // button for home page
 const backToTop = document.createElement('button');
-backToTop.textContent = '↑';
+backToTop.textContent = '⬆';
 backToTop.title = 'Voltar ao topo';
 Object.assign(backToTop.style, {
   display: 'none',
   position: 'fixed',
   bottom: '25px',
   right: '25px',
-  width: '40px',
-  height: '40px',
+  width: '70px',
+  height: '70px',
   padding: '0',
   justifyContent: 'center',
   alignItems: 'center',
@@ -133,7 +133,7 @@ Object.assign(backToTop.style, {
   color: '#fff',
   border: '0',
   cursor: 'pointer',
-  fontSize: '20px',
+  fontSize: '40px',
   zIndex: '1000'
 });
 backToTop.title = 'Voltar ao topo';
@@ -293,3 +293,8 @@ document.addEventListener('click', function(e) {
     modalBg.remove();
   };
 });
+
+let ver_edital = document.querySelector('.ver_edital');
+ver_edital.onclick = ()=>{
+  window.open('https://itapaje.ufc.br/wp-content/uploads/2025/08/sei-5816356-edital-05-2025-1.pdf', '_blank');
+}
