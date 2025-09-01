@@ -289,6 +289,15 @@ section#home{
 
     box-shadow: inset 0 2px 8px rgba(0,0,0,.20);
 }
+
+
+.button-container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 #info button {
     font-size: 15px;
     width: 120px;
@@ -638,7 +647,7 @@ body.dark .ver_edital, .baixar_tamplate {
     }
 
     #info .ver_edital {
-        display: flex;
+        display: flex; 
         justify-content: center;
         height: 40px;
         width: 90px;
@@ -657,7 +666,6 @@ body.dark .ver_edital, .baixar_tamplate {
     }
 
     .cards-container {
-        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
