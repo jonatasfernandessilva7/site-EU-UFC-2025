@@ -61,6 +61,9 @@ h1, h2, h3, p {
     padding: 10px 12px;
     border-radius: 10px;
     position: relative;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
 }
 .links a:hover {
     background: #f5f5f5;
@@ -106,7 +109,7 @@ h1, h2, h3, p {
     outline-offset: 2px;
 }
 .inscrever_2:hover {
-    box-shadow: 0 6px 16px rgba(209, 209, 209, 0.25);
+    box-shadow: 0 6px 16px rgba(0,0,0,.25);
 }
 
 
@@ -229,14 +232,16 @@ section#home{
 
 .logo-EU {
     filter: invert(1);
-    width: 20vw;
-    max-width: 170px;
+    width: 16vw;
+    max-width: 140px;
+    min-width: 90px;
     height: auto;
 }
 
 .logo-UFC {
-    width: 20vw;
-    max-width: 170px;
+    width: 16vw;
+    max-width: 140px;
+    min-width: 90px;
     height: auto;
 }
 
@@ -391,12 +396,17 @@ body.dark .logo-EU,
 body.dark .logo-UFC {
   filter: brightness(0) invert(1);
 }
-body.dark .inscrever {
+
+
+body.dark .inscrever, .inscrever_2 {
     border: 1px solid white;
 }
-body.dark .inscrever_2 {
-    border: 1px solid white;
+
+
+body.dark .inscrever:hover, .inscrever_2:hover {
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
+
 
 body.dark .ver_edital, .baixar_tamplate {
     border: 1px solid white;
@@ -405,7 +415,41 @@ body.dark .ver_edital, .baixar_tamplate {
     text-align: center;
 }
 
+
+body.dark .link_template:hover {
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+    color: #D85841;
+}
+
+
+.link_template{
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 0;
+    margin: 0 auto;
+    justify-content: center;
+    width: auto;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+.link_template:hover {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.164);
+    color: #D85841;
+}
+
+
+
 /* VERSÃO PARA MOBILE */
+@media (max-width: 1090px) {
+    .links {
+        display: none;
+    }
+}
+
+
 @media (max-width: 1020px) {
     .topbar {
         display: flex;
