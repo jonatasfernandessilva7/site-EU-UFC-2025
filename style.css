@@ -366,6 +366,7 @@ section#home{
   height: 22px;
 }
 
+
 /* Tema escuro por classe no body */
 body.dark {
   background: #181a1b;
@@ -377,11 +378,15 @@ body.dark a {
 body.dark a:hover {
     color: black;
 }
+
+
 body.dark section,
 body.dark .card {
   background: #222 !important;
   color: #eee;
 }
+
+
 body.dark button {
   background: none;
   color: #fff;
@@ -392,6 +397,8 @@ body.dark button img {
 body.dark button .bar {
     filter: brightness(0) invert(1);
 }
+
+
 body.dark .logo-EU,
 body.dark .logo-UFC {
   filter: brightness(0) invert(1);
