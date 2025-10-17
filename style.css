@@ -231,17 +231,9 @@ section#home{
 .muted { color: #ece7e7; }
 
 .logo-EU {
-    filter: invert(1);
-    width: 16vw;
-    max-width: 140px;
-    min-width: 90px;
-    height: auto;
-}
-
-.logo-UFC {
-    width: 16vw;
-    max-width: 140px;
-    min-width: 90px;
+    width: 100%;
+    max-width: 250px;
+    min-width: 150px;
     height: auto;
 }
 
@@ -396,12 +388,6 @@ body.dark button img {
 }
 body.dark button .bar {
     filter: brightness(0) invert(1);
-}
-
-
-body.dark .logo-EU,
-body.dark .logo-UFC {
-  filter: brightness(0) invert(1);
 }
 
 
