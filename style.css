@@ -164,25 +164,29 @@ section#home{
 }
 
 
-.prog {
-    width: 100%;
+.cronograma {
+    width: 70vw;
     height: auto;
     border-radius: 10px;
+    margin: auto;
 }
 
 
 .comp {
+    text-decoration: none;
     margin: auto;
     width: 30vw;
-    margin-top: 16px;
     padding: 20px;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 16px);
     border-radius: 10px;
     border: none;
     background-color: #D85841;
     color: white;
     cursor: pointer;
     font-family: Arial, sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 
