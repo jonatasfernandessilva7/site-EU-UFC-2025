@@ -164,6 +164,29 @@ section#home{
 }
 
 
+.prog {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.comp {
+    margin: auto;
+    width: 30vw;
+    margin-top: 16px;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: #D85841;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+
+
 .hero {
     margin-left: 5vw;
     margin-right: 5vw;
